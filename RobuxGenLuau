@@ -6,7 +6,6 @@ for i = 32, 126 do
 	table.insert(RobuxAmount, string.char(i))
 end
 
--- Dont edit script if u want FREE ROBUX, execute this in hydrogen for FREE ROBUX
 local function GenerateRobux(Robux)
 	
 	local BigRobux = ""
